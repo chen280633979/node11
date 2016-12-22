@@ -9,7 +9,7 @@ http.createServer(function (req,res) {
         fs.createReadStream('./index.html').pipe(res);
     }else if(pathname=='/clock'){
         var date = new Date().toLocaleString();
-        res.end(JSON.stringify({date}));
+        res.end(JSON.stringify({date:date}));
     }else{
         fs.exists('.'+pathname,function (flag) {
             if(flag){
